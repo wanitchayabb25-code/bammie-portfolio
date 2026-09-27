@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Wanitchaya (Bammie) Thiamkum, Content Marketing &amp; Creative Strategist in Bangkok.">
+<meta property="og:title" content="Bammie Portfolio">
+<meta property="og:description" content="Short-form video creator: strategy, scripting, production, editing and performance analysis.">
+<meta property="og:image" content="img/me.webp">
+<title>Bammie Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Bagel+Fat+One&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --red: #E1251B;
+    --red-deep: #A8120C;
+    --pink: #FF7EB6;
+    --pink-soft: #FFD6E7;
+    --yellow: #FFD23F;
+    --sky: #8FD0FF;
+    --ink: #22101A;
+    --ink-soft: #5B4450;
+    --paper: #FFF7FA;
+    --white: #FFFFFF;
+    --display: "Bagel Fat One", "Anuphan", system-ui, sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --body: "Anuphan", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --r: 22px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding-inline: 20px; }
+  section { position: relative; overflow: clip; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.05; }
+  p { margin: 0; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* nav */
+  .nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    padding-block: 12px;
+  }
+  .nav .wrap { display: flex; justify-content: center; }
+  .nav ul {
+    display: flex; gap: 4px; list-style: none; margin: 0; padding: 6px;
+    background: var(--ink); border-radius: 999px; overflow-x: auto; max-width: 100%;
+    scrollbar-width: none; box-shadow: 0 8px 24px rgba(34,16,26,.18);
+  }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav a {
+    display: block; padding: 7px 14px; border-radius: 999px; text-decoration: none;
+    color: var(--white); font-weight: 600; font-size: 14px; white-space: nowrap;
+  }
+  .nav a:hover { background: var(--red); }
+
+  /* hero */
+  .hero { padding-block: 28px 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--yellow); padding: 6px 14px; border-radius: 999px; transform: rotate(-2deg);
+  }
+  .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); animation: blink 1.4s infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  .hero h1 {
+    font-family: var(--display); font-weight: 400; color: var(--red);
+    font-size: clamp(56px, 11vw, 132px); line-height: .88; margin-top: 18px; letter-spacing: -.01em;
+  }
+  .hero h1 em {
+    font-family: var(--serif); font-style: italic; color: var(--ink);
+    font-size: .52em; display: block; letter-spacing: 0; margin-top: 10px;
+  }
+  .hero .lede { max-width: 52ch; margin-top: 22px; font-size: 18px; color: var(--ink-soft); }
+  .hero .lede b { color: var(--ink); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px;
+    font-weight: 700; text-decoration: none; border: 2.5px solid var(--ink); background: var(--white);
+    box-shadow: 4px 4px 0 var(--ink); transition: transform .15s, box-shadow .15s; cursor: pointer;
+    font-family: var(--body); font-size: 15px; color: var(--ink);
+  }
+  .btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+  .btn.primary { background: var(--red); color: var(--white); }
+
+  .hero-art { position: relative; aspect-ratio: 4/5; max-width: 440px; width: 100%; justify-self: center; }
+  .blob {
+    position: absolute; inset: 8% 4% 0 4%; background: var(--red);
+    border-radius: 48% 52% 44% 56% / 55% 45% 55% 45%;
+    animation: morph 12s ease-in-out infinite;
+  }
+  @keyframes morph { 50% { border-radius: 58% 42% 52% 48% / 44% 56% 44% 56%; } }
+  .blob::after {
+    content: ""; position: absolute; inset: 10%; border: 2px dashed rgba(255,255,255,.55);
+    border-radius: inherit;
+  }
+  .hero-art .me { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 74%; z-index: 2; filter: drop-shadow(0 12px 18px rgba(0,0,0,.25)); }
+  .sticker {
+    position: absolute; z-index: 3; background: var(--white); border: 2.5px solid var(--ink);
+    border-radius: 16px; padding: 10px 14px; box-shadow: 4px 4px 0 var(--ink); line-height: 1.1;
+  }
+  .sticker b { font-family: var(--display); font-weight: 400; font-size: 30px; display: block; color: var(--red); }
+  .sticker span { font-size: 12px; font-weight: 600; }
+  .s1 { top: 30%; left: -10%; transform: rotate(-6deg); }
+  .s2 { top: 50%; right: -10%; transform: rotate(-4deg); background: var(--yellow); }
+  .s2 b { color: var(--ink); }
+  .s3 { bottom: 2%; left: -6%; transform: rotate(3deg); background: var(--pink-soft); }
+  .deco { position: absolute; pointer-events: none; z-index: 1; }
+  .hib-hero { width: 96px; top: 2%; left: 0; transform: rotate(-16deg); z-index: 1; }
+
+  /* marquee */
+  .ticker { background: var(--ink); color: var(--white); padding-block: 14px; transform: rotate(-1.2deg); margin-block: 8px 40px; width: 104%; margin-left: -2%; }
+  .ticker-track { display: flex; gap: 40px; width: max-content; animation: slide 38s linear infinite; }
+  .ticker span { font-family: var(--display); font-size: 24px; white-space: nowrap; display: inline-flex; align-items: center; gap: 40px; }
+  .ticker span::after { content: "✦"; color: var(--pink); font-size: 18px; }
+  .ticker i { font-style: normal; color: var(--yellow); }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* section heads */
+  .sec { padding-block: 56px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; margin-bottom: 30px; }
+  .sec-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 7vw, 76px); color: var(--ink); }
+  .sec-head h2 em { font-family: var(--serif); font-style: italic; color: var(--red); font-weight: 400; }
+  .sec-head p { max-width: 46ch; color: var(--ink-soft); }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 999px; background: var(--pink-soft); color: var(--red-deep);
+  }
+
+  /* about */
+  .about-grid { display: grid; grid-template-columns: 300px 1fr 1fr; gap: 24px; align-items: start; }
+  .polaroid { background: var(--white); padding: 12px 12px 44px; border-radius: 6px; box-shadow: 0 14px 30px rgba(34,16,26,.14); transform: rotate(-3deg); position: relative; }
+  .polaroid img { aspect-ratio: 4/5; object-fit: cover; border-radius: 3px; width: 100%; }
+  .polaroid figcaption { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-family: var(--serif); font-style: italic; font-size: 22px; }
+  .polaroid .jas { width: 70px; top: -26px; right: -18px; z-index: 2; }
+  .card { background: var(--white); border-radius: var(--r); padding: 26px; border: 2px solid var(--ink); }
+  .facts { display: grid; gap: 10px; margin-top: 14px; }
+  .facts div { display: grid; grid-template-columns: 96px 1fr; gap: 10px; font-size: 15px; }
+  .facts dt { font-weight: 700; color: var(--red); }
+  .facts dd { margin: 0; }
+  .card h3 { font-family: var(--display); font-weight: 400; font-size: 28px; }
+  .bars { display: grid; gap: 14px; margin-top: 16px; }
+  .bar-top { display: flex; justify-content: space-between; font-weight: 600; font-size: 14px; }
+  .bar { height: 14px; border-radius: 999px; background: var(--pink-soft); border: 2px solid var(--ink); overflow: hidden; margin-top: 4px; }
+  .bar i { display: block; height: 100%; background: repeating-linear-gradient(-45deg, var(--red) 0 10px, #F2463C 10px 20px); border-right: 2px solid var(--ink); }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .chip { padding: 6px 12px; border-radius: 999px; background: var(--sky); font-weight: 600; font-size: 14px; border: 2px solid var(--ink); }
+  .chip:nth-child(2) { background: var(--yellow); }
+  .chip:nth-child(3) { background: var(--pink); }
+  .chip:nth-child(4) { background: var(--white); }
+
+  /* experience */
+  .exp { background: var(--red); color: var(--white); border-radius: 36px; margin-inline: 12px; }
+  .exp .sec-head h2 { color: var(--white); }
+  .exp .sec-head h2 em { color: var(--yellow); }
+  .exp .sec-head p { color: rgba(255,255,255,.85); }
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+  .job { background: var(--white); color: var(--ink); border-radius: var(--r); padding: 22px; position: relative; display: flex; flex-direction: column; gap: 8px; }
+  .job .when { font-weight: 700; font-size: 13px; color: var(--red); letter-spacing: .04em; }
+  .job h3 { font-size: 20px; font-weight: 700; line-height: 1.2; }
+  .job .co { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--ink-soft); line-height: 1.2; }
+  .job ul { margin: 6px 0 0; padding-left: 18px; font-size: 14px; display: grid; gap: 6px; }
+  .job .now { position: absolute; top: -12px; right: 14px; background: var(--yellow); color: var(--ink); font-weight: 700; font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 2px solid var(--ink); transform: rotate(4deg); }
+  .job .win { margin-top: auto; padding-top: 10px; border-top: 2px dashed var(--pink); font-weight: 700; font-size: 14px; color: var(--red-deep); }
+
+  /* feed strips */
+  .strip {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 180px; gap: 14px;
+    overflow-x: auto; padding: 6px 4px 18px; scroll-snap-type: x mandatory;
+    scrollbar-color: var(--red) var(--pink-soft);
+  }
+  .strip > * { scroll-snap-align: start; }
+  .tile { border-radius: 18px; overflow: hidden; border: 2.5px solid var(--ink); background: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .r916 { aspect-ratio: 9/16; }
+  .r34 { aspect-ratio: 3/4; }
+  .strip.wide { grid-auto-columns: 300px; }
+  .r169 { aspect-ratio: 16/10; }
+  .hint { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* brand blocks */
+  .brand { display: grid; grid-template-columns: 320px 1fr; gap: 28px; padding-block: 34px; border-top: 2px dashed rgba(34,16,26,.18); }
+  .brand:first-of-type { border-top: 0; }
+  .brand-info h3 { font-family: var(--display); font-weight: 400; font-size: 34px; color: var(--red); }
+  .brand-info .role { font-family: var(--serif); font-style: italic; font-size: 20px; margin-top: 4px; }
+  .brand-info p.d { margin-top: 12px; color: var(--ink-soft); font-size: 15px; }
+  .brand-info .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .brand-info .links a { font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 2px solid var(--ink); text-decoration: none; background: var(--white); }
+  .brand-info .links a:hover { background: var(--yellow); }
+  .brand-body { min-width: 0; display: grid; gap: 18px; }
+
+  /* case studies */
+  .cases { background: var(--ink); color: var(--white); border-radius: 36px; margin-inline: 12px; }
+  .cases .sec-head h2 { color: var(--white); }
+  .cases .sec-head h2 em { color: var(--pink); }
+  .cases .sec-head p { color: rgba(255,255,255,.75); }
+  .case { display: grid; grid-template-columns: 250px 1fr; gap: 32px; align-items: start; padding-block: 26px; }
+  .case + .case { border-top: 2px dashed rgba(255,255,255,.2); }
+  .phone { border-radius: 30px; border: 6px solid var(--white); overflow: hidden; aspect-ratio: 9/16; box-shadow: 10px 10px 0 var(--red); position: relative; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; }
+  .case:nth-child(even) .phone { box-shadow: 10px 10px 0 var(--pink); }
+  .case-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .case-top .tag { background: var(--yellow); color: var(--ink); }
+  .case h3 { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 4vw, 40px); margin-top: 10px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 18px; }
+  .metric { background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.18); border-radius: 18px; padding: 14px 16px; }
+  .metric b { font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1; display: block; color: var(--yellow); }
+  .metric:first-child { background: var(--red); border-color: var(--red); }
+  .metric:first-child b { color: var(--white); }
+  .metric span { font-size: 13px; color: rgba(255,255,255,.8); display: block; margin-top: 6px; line-height: 1.35; }
+  .csr { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  .csr div { font-size: 14.5px; color: rgba(255,255,255,.85); }
+  .csr h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--pink); }
+
+  /* campaigns */
+  .camp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .camp { background: var(--white); border: 2.5px solid var(--ink); border-radius: var(--r); overflow: hidden; box-shadow: 5px 5px 0 var(--ink); display: flex; flex-direction: column; }
+  .camp .covers { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: var(--ink); }
+  .camp .covers img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .camp .covers img.full { grid-column: 1 / -1; aspect-ratio: 16/8; }
+  .camp .txt { padding: 16px 18px 20px; }
+  .camp h3 { font-size: 20px; font-weight: 700; line-height: 1.25; }
+  .camp p { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* mood hotel */
+  .mood-wrap { background: var(--yellow); border-radius: 36px; margin-inline: 12px; }
+  .mood-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: center; }
+  .growth { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 18px; }
+  .growth b { font-family: var(--display); font-weight: 400; font-size: clamp(48px, 8vw, 84px); line-height: 1; }
+  .growth .arrow { font-family: var(--display); font-size: 40px; color: var(--red); }
+  .growth b.to { color: var(--red); }
+  .mood-collage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mood-collage img { border-radius: 14px; border: 2.5px solid var(--ink); aspect-ratio: 1; object-fit: cover; width: 100%; background: var(--white); }
+  .mood-collage img.tall { grid-row: span 2; aspect-ratio: auto; height: 100%; }
+  .mood-collage img.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+  /* design masonry */
+  .masonry { columns: 5 170px; column-gap: 14px; }
+  .masonry img { break-inside: avoid; margin-bottom: 14px; border-radius: 16px; width: 100%; transition: transform .2s; }
+  .masonry img:hover { transform: rotate(-1.5deg) scale(1.02); }
+
+  /* contact */
+  .contact { padding-block: 70px 90px; text-align: center; }
+  .contact h2 { font-family: var(--display); font-weight: 400; color: var(--red); font-size: clamp(52px, 10vw, 120px); line-height: .9; }
+  .contact h2 em { font-family: var(--serif); font-style: italic; color: var(--ink); display: block; font-size: .42em; margin-top: 12px; }
+  .contact-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 34px; }
+  .cc { background: var(--white); border: 2.5px solid var(--ink); border-radius: 18px; padding: 14px 16px 14px 20px; display: flex; align-items: center; gap: 14px; box-shadow: 4px 4px 0 var(--ink); text-align: left; max-width: 100%; }
+  .cc small { display: block; font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: .08em; text-transform: uppercase; }
+  .cc .v { font-weight: 600; user-select: all; word-break: break-all; }
+  .copy { border: 2px solid var(--ink); background: var(--yellow); border-radius: 999px; padding: 6px 12px; font-weight: 700; font-family: var(--body); cursor: pointer; font-size: 13px; }
+  .contact .hib-a { width: 120px; left: 6%; top: 30px; transform: rotate(-20deg); }
+  .contact .star-a { width: 90px; right: 8%; top: 60px; transform: rotate(14deg); }
+  footer { text-align: center; padding-block: 0 40px; font-size: 13px; color: var(--ink-soft); }
+
+  @media (max-width: 960px) {
+    .timeline { grid-template-columns: 1fr 1fr; }
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    .about-grid .polaroid { grid-column: 1 / -1; max-width: 280px; justify-self: center; }
+    .brand { grid-template-columns: 1fr; gap: 16px; }
+    .camp-grid { grid-template-columns: 1fr 1fr; }
+    .mood-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { max-width: 340px; }
+    .s1 { left: 0; } .s2 { right: 0; } .s3 { left: 0; } .hib-hero { width: 72px; }
+    .about-grid, .timeline, .camp-grid { grid-template-columns: 1fr; }
+    .case { grid-template-columns: 1fr; }
+    .case .phone { max-width: 230px; }
+    .csr { grid-template-columns: 1fr; }
+    .exp, .cases, .mood-wrap { margin-inline: 0; border-radius: 26px; }
+    .strip { grid-auto-columns: 150px; }
+    .strip.wide { grid-auto-columns: 250px; }
+    .ticker span { font-size: 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Portfolio 2023 – 2026</span>
+      <h1>Wanitchaya<br>Thiamkum<em>Content Marketing &amp; Creative Strategist</em></h1>
+      <p class="lede">Hi, I’m Bammie, a short-form video creator who owns the whole process: <b>strategy, scripting, production, editing and performance analysis</b>. My work includes a campaign video with <b>7.7M views</b> and a hotel Instagram I grew from 100 to <b>13K followers in four months</b>.</p>
+      <div class="cta">
+        <a class="btn primary" href="#cases">View Case Studies →</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="blob" aria-hidden="true"></div>
+      <img class="deco hib-hero" src="img/hibiscus.webp" alt="" aria-hidden="true">
+      <img class="me" src="img/me-cutout.webp" alt="Wanitchaya (Bammie) Thiamkum">
+      <div class="sticker s1"><b class="num">7.7M</b><span>views · one video</span></div>
+      <div class="sticker s2"><b class="num">44K+</b><span>link clicks</span></div>
+      <div class="sticker s3"><b class="num">13K</b><span>IG followers in 4 mo.</span></div>
+    </div>
+  </div>
+</header>
+
+<div style="overflow:clip;padding-block:6px"><div class="ticker" aria-label="Highlights">
+  <div class="ticker-track">
+    <span><i>7.7M</i> views</span><span><i>3.1M</i> organic views</span><span><i>95.4%</i> new audience</span><span><i>44,271</i> link clicks</span><span><i>100 → 13K</i> followers</span><span><i>2.4M</i> 3-sec views</span><span>Script · Shoot · Edit · Analyze</span>
+    <span aria-hidden="true"><i>7.7M</i> views</span><span aria-hidden="true"><i>3.1M</i> organic views</span><span aria-hidden="true"><i>95.4%</i> new audience</span><span aria-hidden="true"><i>44,271</i> link clicks</span><span aria-hidden="true"><i>100 → 13K</i> followers</span><span aria-hidden="true"><i>2.4M</i> 3-sec views</span><span aria-hidden="true">Script · Shoot · Edit · Analyze</span>
+  </div>
+</div></div>
+
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>About <em>me</em></h2>
+      <p>Creative Content Creator ที่ชอบเริ่มจาก insight ของคนดู แล้วออกแบบ hook ให้คนหยุดเลื่อนฟีด</p>
+    </div>
+    <div class="about-grid">
+      <figure class="polaroid" style="margin:0">
+        <img class="deco jas" src="img/jasmine.webp" alt="" aria-hidden="true">
+        <img src="img/me.webp" alt="Portrait of Bammie">
+        <figcaption>hi, it’s Bammie!</figcaption>
+      </figure>
+      <div class="card">
+        <h3>Profile</h3>
+        <dl class="facts">
+          <div><dt>Name</dt><dd>Wanitchaya Thiamkum (Bammie)</dd></div>
+          <div><dt>Age</dt><dd>26</dd></div>
+          <div><dt>Education</dt><dd>Bachelor of Public Administration, Faculty of Political Science and Law, Burapha University</dd></div>
+          <div><dt>Based in</dt><dd>Phra Khanong, Bangkok</dd></div>
+          <div><dt>Platforms</dt><dd>TikTok · Facebook · Instagram · YouTube</dd></div>
+        </dl>
+        <div class="tools" aria-label="Tools">
+          <span class="chip">CapCut</span><span class="chip">Canva</span><span class="chip">ibisPaint</span><span class="chip">Claude (AI)</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Skills &amp; Expertise</h3>
+        <div class="bars">
+          <div><div class="bar-top"><span>Scriptwriting &amp; Storyboard</span><span class="num">95%</span></div><div class="bar"><i style="width:95%"></i></div></div>
+          <div><div class="bar-top"><span>Content Strategy</span><span class="num">92%</span></div><div class="bar"><i style="width:92%"></i></div></div>
+          <div><div class="bar-top"><span>Video Production &amp; Editing</span><span class="num">88%</span></div><div class="bar"><i style="width:88%"></i></div></div>
+          <div><div class="bar-top"><span>On-set Direction</span><span class="num">85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+          <div><div class="bar-top"><span>AI Content Tools</span><span class="num">82%</span></div><div class="bar"><i style="width:82%"></i></div></div>
+          <div><div class="bar-top"><span>Data Analysis &amp; Insight</span><span class="num">80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="sec exp">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Work <em>experience</em></h2>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <span class="when num">MAY 2023 – JAN 2024</span>
+        <h3>Content Creator (Marketing &amp; Event)</h3>
+        <p class="co">A-One Pattaya · Mood Hotel</p>
+        <ul>
+          <li>Managed Mood Hotel’s Instagram, Facebook and TikTok</li>
+          <li>Directed shoots, edited videos, and worked with photographers and the graphic team</li>
+          <li>Kept the feed on-trend and on-brand</li>
+        </ul>
+        <p class="win">Grew IG from 100 to 13K followers in 4 months</p>
+      </article>
+      <article class="job">
+        <span class="when num">JUN 2024 – SEP 2024</span>
+        <h3>Content Creator Assistant</h3>
+        <p class="co">Flourish Digital · LDA Review</p>
+        <ul>
+          <li>Planned content timelines and coordinated freelancers (camera, editors, graphics, KOLs)</li>
+          <li>Wrote and reviewed scripts, briefed on-camera hosts, and created captions and thumbnails</li>
+          <li>Edited short-form videos for YouTube, Facebook and TikTok</li>
+        </ul>
+        <p class="win">Gadget reviews with tens of thousands to 160K+ views</p>
+      </article>
+      <article class="job">
+        <span class="when num">DEC 2024 – FEB 2026</span>
+        <h3>Creative Content</h3>
+        <p class="co">7DaySuccess · Lotteryplus</p>
+        <ul>
+          <li>Wrote scripts and storyboards and briefed on-camera talent</li>
+          <li>Ran shoots from set-up to final take and directed hosts during live sessions</li>
+          <li>Planned campaign content using insights from the Ads and Data teams</li>
+        </ul>
+        <p class="win">Videos with 7.7M and 3.1M views</p>
+      </article>
+      <article class="job">
+        <span class="now">Now ✦</span>
+        <span class="when num">2026 – PRESENT</span>
+        <h3>Creative Content Creator</h3>
+        <p class="co">BRAVE BRAND · The Rolling Pinn</p>
+        <ul>
+          <li>Create The Rolling Pinn’s TikTok content end to end: ideas, filming, voice-over and editing</li>
+          <li>Produce partnership and marketing campaign content</li>
+          <li>Present results in team meetings and adjust the plan to hit KPIs</li>
+        </ul>
+        <p class="win">Top Choco Gems video: 179K views</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="sec cases" style="margin-top:28px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Case <em>studies</em></h2>
+    </div>
+
+    <article class="case">
+      <div class="phone"><img src="img/case2.webp" alt="Lotteryplus video frame, 7.7 million views"></div>
+      <div>
+        <div class="case-top"><span class="tag">Case 01</span><span class="tag">Meta · Facebook Ads</span></div>
+        <h3>Viral reach ที่เปลี่ยนเป็น traffic จริง</h3>
+        <div class="metrics">
+          <div class="metric"><b class="num">7.7M</b><span>Views</span></div>
+          <div class="metric"><b class="num">95.4%</b><span>ผู้ชมใหม่ (non-followers)</span></div>
+          <div class="metric"><b class="num">44,271</b><span>Link clicks ไปหน้าสั่งซื้อ / เว็บ</span></div>
+          <div class="metric"><b class="num">39,333</b><span>Engagements (38,797 reactions)</span></div>
+          <div class="metric"><b class="num">2.4M</b><span>3-second views: hook หยุดนิ้วคนดูได้</span></div>
+        </div>
+        <div class="csr">
+          <div><h4>Challenge</h4>ขยายการเข้าถึงไปยังกลุ่มเป้าหมายใหม่ พร้อมกระตุ้น Engagement และ Traffic เข้าสู่ช่องทางของแบรนด์</div>
+          <div><h4>Strategy</h4>ใช้ Insight-driven Content เลือกหัวข้อที่ตลาดสนใจสูง และออกแบบ Hook ช่วงต้นคลิปให้เป็น Scroll Stopper</div>
+          <div><h4>Result</h4>เข้าถึง “กลุ่มลูกค้าใหม่” ได้เกือบทั้งหมด และพาคนไปหน้าสั่งซื้อได้กว่า 44K ครั้ง</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="phone"><img src="img/case1.webp" alt="Lotteryplus video frame, 3.1 million views"></div>
+      <div>
+        <div class="case-top"><span class="tag">Case 02</span><span class="tag">Organic · Top-of-Funnel</span></div>
+        <h3>Brand awareness แบบออร์แกนิก 3 ล้านวิว</h3>
+        <div class="metrics">
+          <div class="metric"><b class="num">3.1M</b><span>Organic views</span></div>
+          <div class="metric"><b class="num">83%</b><span>สัดส่วนผู้ชมใหม่</span></div>
+          <div class="metric"><b class="num">TOFU</b><span>Convert ผู้ชมเป็นผู้ติดตามใหม่</span></div>
+        </div>
+        <div class="csr">
+          <div><h4>Challenge</h4>เพิ่ม Brand Awareness และเข้าถึงผู้ชมใหม่จำนวนมาก โดยยังรักษาคุณภาพ Audience และกระตุ้นการติดตามเพจระยะยาว</div>
+          <div><h4>Strategy</h4>วิเคราะห์พฤติกรรมผู้บริโภค เลือก Topic ที่ตรงความสนใจ และออกแบบเป็น Top-of-Funnel Content เพื่อดึงผู้ชมใหม่เข้าสู่แบรนด์</div>
+          <div><h4>Insight</h4>พิสูจน์ว่า Content Strategy และการเลือก Topic ตรงใจตลาดและมีศักยภาพในการเติบโต</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="work" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Selected <em>work</em></h2>
+      <p>รวมผลงานแยกตามแบรนด์ เลื่อนดูแต่ละแถวไปทางขวาได้เลย</p>
+    </div>
+
+    <div class="brand">
+      <div class="brand-info">
+        <span class="tag">TikTok · Now</span>
+        <h3>The Rolling Pinn</h3>
+        <p class="role">Choco Gems · end-to-end creator</p>
+        <p class="d">คิดไอเดีย ถ่าย พากย์ และตัดต่อเองทั้งหมด ทำคอนเทนต์ขนมให้ดูสนุกและน่ากินในสไตล์ TikTok</p>
+        <div class="links"><a href="https://drive.google.com/drive/folders/1ktUdQhm8HKqyPFce2JGzKW1gLWSWdxCG?usp=sharing" target="_blank" rel="noopener">ดูตัวอย่างงานตัด ↗</a></div>
+      </div>
+      <div class="brand-body">
+        <div class="strip" tabindex="0" aria-label="The Rolling Pinn videos">
+          <div class="tile r34"><img src="img/rp1.webp" alt="Choco Gems video, 179.4K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp6.webp" alt="Pick your pop video, 119.4K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp3.webp" alt="Choco Gems video, 75.9K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp7.webp" alt="Choco Gems Pop video, 41.2K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp5.webp" alt="Choco Gems video" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp8.webp" alt="Choco Gems Pop store video, 37.8K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp2.webp" alt="Choco Gems Pop Baby Edition, 28.8K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/rp4.webp" alt="Choco Gems video, 26.6K views" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-info">
+        <span class="tag">Short-form · Live</span>
+        <h3>Lotteryplus</h3>
+        <p class="role">Script · Direction · On-set</p>
+        <p class="d">เขียนสคริปต์ กำกับ talent คุมกองถ่าย และกำกับพิธีกรระหว่างไลฟ์ หลายคลิปมียอดวิวหลักแสนถึงหลักล้าน</p>
+      </div>
+      <div class="brand-body">
+        <div class="strip" tabindex="0" aria-label="Lotteryplus videos">
+          <div class="tile r916"><img src="img/lp13.webp" alt="Lotteryplus video, 7.7M views" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp1.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp3.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp4.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp7.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp2.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp5.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp11.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp6.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp8.webp" alt="Lotteryplus news-style video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp9.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp10.webp" alt="Lotteryplus video" loading="lazy"></div>
+          <div class="tile r916"><img src="img/lp12.webp" alt="Lotteryplus street video" loading="lazy"></div>
+        </div>
+        <div class="strip wide" tabindex="0" aria-label="Behind the scenes">
+          <div class="tile r169"><img src="img/bts1.webp" alt="Lotteryplus stage event" loading="lazy"></div>
+          <div class="tile r169"><img src="img/bts2.webp" alt="Studio shoot" loading="lazy"></div>
+          <div class="tile r169"><img src="img/bts3.webp" alt="Live session set" loading="lazy"></div>
+          <div class="tile r169"><img src="img/bts4.webp" alt="Audience at event" loading="lazy"></div>
+          <div class="tile r169"><img src="img/bts5.webp" alt="Studio shoot behind the scenes" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-info">
+        <span class="tag">Campaigns</span>
+        <h3>Marketing Campaigns</h3>
+        <p class="role">Owning the video creative process</p>
+        <p class="d">ออกแบบสื่อที่จะสื่อสาร</p>
+      </div>
+      <div class="brand-body">
+        <div class="camp-grid">
+          <article class="camp">
+            <div class="covers">
+              <img src="img/campaign-rich.webp" alt="ความหวังคนจะรวย key visual" loading="lazy">
+              <img src="img/rich-cast.webp" alt="Campaign cast videos" loading="lazy">
+              <img class="full" src="img/campaign-billboard.webp" alt="Campaign on a roadside billboard" loading="lazy">
+            </div>
+            <div class="txt"><h3>ความหวังคนจะรวย</h3><p>Creative video content · Lotteryplus</p></div>
+          </article>
+          <article class="camp">
+            <div class="covers">
+              <img src="img/happybus.webp" alt="Happy Bus 8 routes key visual" loading="lazy">
+              <img src="img/campaign-grid.webp" alt="Happy Bus video grid" loading="lazy">
+              <img class="full" src="img/happybus-night.webp" alt="Happy Bus fleet at night" loading="lazy">
+            </div>
+            <div class="txt"><h3>Happy Bus พาความหวังกลับบ้าน</h3><p>Creative video content · Lotteryplus</p></div>
+          </article>
+          <article class="camp">
+            <div class="covers">
+              <img src="img/rizzup.webp" alt="RIZZUP app icon" loading="lazy">
+              <img src="img/rizz1.webp" alt="RIZZUP street interview" loading="lazy">
+              <img class="full" src="img/rizz2.webp" alt="RIZZUP street content" loading="lazy" style="object-position:center 30%">
+            </div>
+            <div class="txt"><h3>RIZZUP · Dating App</h3><p>Creative video content</p></div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand">
+      <div class="brand-info">
+        <span class="tag">YouTube · TikTok</span>
+        <h3>LDA Review</h3>
+        <p class="role">Ladies of Digital Age · Creative team</p>
+        <p class="d">รีวิว gadget ลง YouTube, Facebook, TikTok ทำสคริปต์ บรีฟคนหน้ากล้อง ออกแบบ thumbnail และตัดคลิปสั้น</p>
+        <div class="links">
+          <a href="https://www.tiktok.com/@ldareview/video/7427077250425605392" target="_blank" rel="noopener">TikTok 1 ↗</a>
+          <a href="https://www.tiktok.com/@ldareview/video/7392821159156321553" target="_blank" rel="noopener">TikTok 2 ↗</a>
+          <a href="https://www.tiktok.com/@ldareview/video/7387299182119259410" target="_blank" rel="noopener">TikTok 3 ↗</a>
+          <a href="https://www.tiktok.com/@ldareview/video/7389933331686739208" target="_blank" rel="noopener">TikTok 4 ↗</a>
+        </div>
+      </div>
+      <div class="brand-body">
+        <div class="strip wide" tabindex="0" aria-label="LDA Review YouTube thumbnails">
+          <div class="tile" style="background:#fff"><img src="img/yt1.webp" alt="Laifen Mini review, 78K views" loading="lazy"></div>
+          <div class="tile" style="background:#fff"><img src="img/yt2.webp" alt="iPhone 16 summary, 133K views" loading="lazy"></div>
+          <div class="tile" style="background:#fff"><img src="img/yt3.webp" alt="Samsung Z Fold6 and Flip6 review, 163K views" loading="lazy"></div>
+          <div class="tile" style="background:#fff"><img src="img/yt4.webp" alt="Lenovo IdeaPad review, 41K views" loading="lazy"></div>
+        </div>
+        <div class="strip" tabindex="0" aria-label="LDA Review short videos">
+          <div class="tile r34"><img src="img/ldat1.webp" alt="Galaxy Z Flip6 short, 13.6K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/ldat2.webp" alt="Thinnest phone short, 63.8K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/ldat3.webp" alt="OPPO Reno12 short, 57.4K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/ldat4.webp" alt="iPad Pro vs iPad Air short, 63.7K views" loading="lazy"></div>
+          <div class="tile r34"><img src="img/lda1.webp" alt="iPhone 16 unbox thumbnail" loading="lazy"></div>
+          <div class="tile r34"><img src="img/lda3.webp" alt="Dyson Supersonic unbox" loading="lazy"></div>
+          <div class="tile r34"><img src="img/lda-bts.webp" alt="LDA studio behind the scenes" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec mood-wrap">
+  <div class="wrap mood-grid">
+    <div>
+      <span class="tag" style="background:var(--white)">Instagram · Hotel</span>
+      <div class="sec-head" style="margin:14px 0 0"><h2>Mood <em>Hotel</em></h2></div>
+      <p style="max-width:48ch;margin-top:10px">ดูแล Instagram ของ Mood Hotel Pattaya ตั้งแต่วางโทนเพจสีเหลืองสดใส ผลิต Reels และโพสต์ จนเพจโตแบบก้าวกระโดด</p>
+      <div class="growth" aria-label="Followers grew from 100 to 13K in 4 months">
+        <b class="num">100</b><span class="arrow" aria-hidden="true">→</span><b class="num to">13K</b>
+      </div>
+      <p style="font-weight:700;margin-top:6px">followers ภายใน 4 เดือน · Reel ยอดวิวสูงสุด 824K</p>
+    </div>
+    <div class="mood-collage">
+      <img class="tall" src="img/mood-reel.webp" alt="Mood Hotel reel, 824K views" loading="lazy">
+      <img src="img/mood1.webp" alt="Mood Hotel feed" loading="lazy">
+      <img src="img/mood5.webp" alt="Mood Hotel feed" loading="lazy">
+      <img src="img/moodp1.webp" alt="Mood Hotel mascot shoot" loading="lazy">
+      <img src="img/mood7.webp" alt="Mood Hotel feed" loading="lazy">
+      <img class="wide" src="img/mood-ig.webp" alt="Mood Hotel Instagram profile with 13.3K followers" loading="lazy" style="object-fit:contain">
+      <img src="img/moodp4.webp" alt="Mood Hotel event photo" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="design" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Artwork <em>design</em></h2>
+      <p>งานกราฟิกโปรโมตสินค้า Love Potion สำหรับโซเชียล</p>
+    </div>
+    <div class="masonry">
+      <img src="img/design1.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design8.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design5.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design9.webp" alt="Love Potion model artwork" loading="lazy">
+      <img src="img/design3.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design11.webp" alt="Cactus cream artwork" loading="lazy">
+      <img src="img/design4.webp" alt="Cactus cream artwork" loading="lazy">
+      <img src="img/design13.webp" alt="Serum artwork" loading="lazy">
+      <img src="img/design6.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design15.webp" alt="Serum promo artwork" loading="lazy">
+      <img src="img/design10.webp" alt="Grape soap artwork" loading="lazy">
+      <img src="img/design16.webp" alt="Miniset artwork" loading="lazy">
+      <img src="img/design7.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design12.webp" alt="Sun Kiss artwork" loading="lazy">
+      <img src="img/design17.webp" alt="Grape soap artwork" loading="lazy">
+      <img src="img/design18.webp" alt="Sunday sunscreen artwork" loading="lazy">
+      <img src="img/design2.webp" alt="Love Potion product artwork" loading="lazy">
+      <img src="img/design14.webp" alt="Sunday artwork" loading="lazy">
+      <img src="img/design19.webp" alt="Sunday sunscreen artwork" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <img class="deco hib-a" src="img/hibiscus.webp" alt="" aria-hidden="true">
+  <img class="deco star-a" src="img/star.webp" alt="" aria-hidden="true">
+  <div class="wrap">
+    <h2>Let’s create!<em>Thanks for stopping by!</em></h2>
+    <div class="contact-cards">
+      <div class="cc"><div><small>Email</small><span class="v" id="email">wanitchayabb.25@gmail.com</span></div><button class="copy" type="button" data-copy="email">Copy</button></div>
+      <div class="cc"><div><small>Phone</small><span class="v num" id="phone">062-445-7906</span></div><button class="copy" type="button" data-copy="phone">Copy</button></div>
+      <div class="cc"><div><small>Work samples</small><a class="v" href="https://drive.google.com/drive/folders/1ktUdQhm8HKqyPFce2JGzKW1gLWSWdxCG?usp=sharing" target="_blank" rel="noopener">Google Drive folder ↗</a></div></div>
+    </div>
+  </div>
+</section>
+<footer>Wanitchaya “Bammie” Thiamkum · Content Marketing &amp; Creative Strategist · Bangkok</footer>
+
+<script>
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.copy);
+      var text = el.textContent.trim();
+      function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }
+      function fallback() {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+      }
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+</script>
+</body>
+</html>
